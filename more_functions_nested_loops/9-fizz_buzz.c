@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
- * fizz_buzz - print fizz buzz for multiple of 3 and 5
+ * main - print fizz buzz for multiple of 3 and 5
+ * Return: 0
  */
 
 int main(void)
