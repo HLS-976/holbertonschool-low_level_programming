@@ -1,11 +1,17 @@
-#include <string.h>
-
 /**
- * _strlen - return size of parameter given
- * @s: prameter
- * Return: number
+ * _strlen - print size of a string
+ * @s: string parameteer
+ * Return: integer
  */
+
 int _strlen(char *s)
 {
-	return (strlen(s));
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
 }
