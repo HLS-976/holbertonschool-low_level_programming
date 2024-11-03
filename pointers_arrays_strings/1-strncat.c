@@ -1,5 +1,5 @@
 /**
- * strncat - cacatenate two strings with n byte
+ * _strncat - cacatenate two strings with n byte
  * @dest: param 1
  * @src: param 2
  * @n: param 3
