@@ -9,9 +9,9 @@ int square(int x, int y);
 
 int _sqrt_recursion(int n)
 {
-	if (n < -1)
+	if (n < 0)
 	{
-		return (0);
+		return (-1);
 	}
 	else
 	{
