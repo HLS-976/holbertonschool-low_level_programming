@@ -1,38 +1,17 @@
-/**
- * _sqrt_recursion - return natural square root of a number
- * @n: parameter
- * Return: parameter
- */
-
-
-int square(int x, int y);
-
-int _sqrt_recursion(int n)
-{
-	if (n < 0)
-	{
-		return (-1);
-	}
-	else
-	{
-		int i = 1;
-
-		return (square(n, i));
-	}
-}
+#include "main.h"
 
 /**
- * square - square function
+ * _square - square function
  * @x: int
  * @y: y
  * Return: int
  */
 
-int square(int x, int y)
+int _square(int x, int y)
 {
 	if (y * y < x)
 	{
-		return (square(x, y + 1));
+		return (_square(x, y + 1));
 	}
 	else if (y * y > x)
 	{
@@ -42,4 +21,21 @@ int square(int x, int y)
 	{
 		return (y);
 	}
+}
+
+/**
+ * _sqrt_recursion - return natural square root of a number
+ * @n: parameter
+ * Return: parameter
+ */
+
+
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
+	{
+		return (-1);
+	}
+
+	return (_square(n, 0));
 }
