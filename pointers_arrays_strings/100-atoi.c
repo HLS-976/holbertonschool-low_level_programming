@@ -26,7 +26,7 @@ int _atoi(char *s)
 		i++;
 	}
 
-	while (s[i] >= 48 && s[i] <= 57)
+	while (s[i] >= 48 && s[i] < 58)
 	{
 		res = (res * 10) + (s[i] - 48);
 		i++;
