@@ -8,33 +8,34 @@
 
 char *_strdup(char *str)
 {
+
+	char *ptr_str;
+	int i = 0;
+	int j;
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	else
+
+	while (str[i] != '\0')
 	{
-		char *ptr_str = NULL;
-		int i = 0;
-		int j;
-
-		while (str[i] != '\0')
-		{
-			i++;
-		}
-
-		ptr_str = malloc(sizeof(char) * i);
-
-		if (ptr_str == NULL)
-		{
-			return (NULL);
-		}
-
-		for (j = 0; j < i; j++)
-		{
-			ptr_str[j] = str[j];
-		}
-
-		return (ptr_str);
+		i++;
 	}
+
+	ptr_str = malloc(sizeof(char) * (i + 1));
+
+	if (ptr_str == NULL)
+	{
+		return (NULL);
+	}
+
+	for (j = 0; j < i; j++)
+	{
+		ptr_str[j] = str[j];
+	}
+
+	ptr_str[i] = '\0';
+
+	return (ptr_str);
 }

@@ -10,23 +10,24 @@
 
 char *create_array(unsigned int size, char c)
 {
+	unsigned int i;
+
 	if (size == 0)
 	{
 		return (NULL);
 	}
-	else
+
+	char *ptr_array = malloc(size);
+
+	if (ptr_array == NULL)
 	{
-		char *ptr_array = malloc(size);
-
-		*ptr_array = c;
-
-		if (ptr_array == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-			return (ptr_array);
-		}
+		return (NULL);
 	}
+
+	for (i = 0; i < size; i++)
+	{
+		ptr_array[i] = c;
+	}
+
+	return (ptr_array);
 }
