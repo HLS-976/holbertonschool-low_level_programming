@@ -15,12 +15,12 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	ptr_arr = calloc((max - min), sizeof(int));
+	ptr_arr = calloc((max - min + 1), sizeof(int));
 
 	if (ptr_arr == NULL)
 		return (NULL);
 
-	for (i = 0; i < (max - min); i++)
+	for (i = 0; i < (max - min + 1); i++)
 		ptr_arr[i] = min + i;
 
 	return (ptr_arr);
