@@ -11,12 +11,16 @@
  */
 
 
-typedef struct dog
+struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-}
-dog;
+};
 
+
+/**
+ * my_dog - typedef for struct dog
+ */
+typedef struct dog my_dog;
 #endif
