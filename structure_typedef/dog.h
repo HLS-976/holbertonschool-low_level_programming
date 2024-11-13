@@ -9,8 +9,6 @@
  *
  * Description: this structure
  */
-
-
 typedef struct dog
 {
 	char *name;
@@ -19,3 +17,4 @@ typedef struct dog
 } my_dog;
 
 #endif
+
