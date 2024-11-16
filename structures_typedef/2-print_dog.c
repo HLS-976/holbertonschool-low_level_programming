@@ -1,9 +1,9 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
-#include "main.h"
 #include <math.h>
 /**
  * print_dog - print a struct dog
+ *
  * @d: struct dog
  * Return: void
  */
