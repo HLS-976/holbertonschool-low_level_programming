@@ -29,6 +29,12 @@ int main(int argc, char *argv[])
 	operator = argv[2];
 
 	resultOperation = get_op_func(operator);
+	if (resultOperation == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
 
 	printf("%d\n", resultOperation(num1, num2));
 
