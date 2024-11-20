@@ -16,11 +16,15 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
+	int i;
 
-	op_t *ptr_op = ops;
+	i = 0;
 
-	while (ptr_op->op != NULL && *(ptr_op->op) != *s)
-		ptr_op++;
-
-	return (ptr_op->f);
+	while (ops[i].op != NULL)
+	{
+		if (ops[i].op[0] == s[0])
+			return (ops[i].f);
+		i++;
+	}
+	return (NULL);
 }
