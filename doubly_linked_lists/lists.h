@@ -15,11 +15,19 @@
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
+/**
+ * struct dlist_s - doubly linked list
+ * @n: integer value
+ * @prev: points to the previous node
+ * @next: points to the next node
+ *
+ * Description: doubly linked list node structure
+ */
 typedef struct dlist_s
 {
 	int n;
