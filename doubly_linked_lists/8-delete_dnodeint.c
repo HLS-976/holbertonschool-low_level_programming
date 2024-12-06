@@ -2,11 +2,11 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - Supprime le nœud à l'index donné dans une liste doublement chaînée.
- * @head: Un pointeur vers un pointeur à la tête de la liste.
- * @index: L'index du nœud à supprimer, commençant à 0.
+ * delete_dnodeint_at_index - Delete the node at the index given
+ * @head: A pointer to a pointer to the head node
+ * @index: index of node to delete beginning at 0
  *
- * Return: 1 si réussi, -1 si échoué.
+ * Return: 1 if succeed, -1 if failure.
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -16,7 +16,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (head == NULL || *head == NULL)
 		return (-1);
 
-	/* Si le premier nœud doit être supprimé */
 	if (index == 0)
 	{
 		*head = current->next;
@@ -26,18 +25,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (1);
 	}
 
-	/* Parcourir jusqu'au nœud à supprimer */
 	while (current != NULL && i < index)
 	{
 		current = current->next;
 		i++;
 	}
 
-	/* Si le nœud n'existe pas */
 	if (current == NULL)
 		return (-1);
 
-	/* Modifier les pointeurs pour supprimer le nœud */
 	if (current->prev != NULL)
 		current->prev->next = current->next;
 	if (current->next != NULL)
