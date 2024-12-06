@@ -3,6 +3,7 @@
 /*libraries*/
 #include <unistd.h>
 #include <fcnt.h>
+#include <stdlib.h>
 /*prototype*/
 ssize_t read_textfile(const char *filename, size_t letters);
 #endif
