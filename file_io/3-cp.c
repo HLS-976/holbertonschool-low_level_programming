@@ -21,7 +21,7 @@ void error_exit(const char *msg, const char *file, int code)
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
-	ssize_t rd, wr;
+	ssize_t rd, wr, total_written = 0;
 	char buf[1024];
 
 	if (argc != 3)
@@ -44,8 +44,6 @@ int main(int argc, char *argv[])
 			break;
 		if (rd == -1)
 			error_exit("Error: Can't read from file %s\n", argv[1], 98);
-
-		ssize_t total_written = 0;
 
 		while (total_written < rd)
 		{
