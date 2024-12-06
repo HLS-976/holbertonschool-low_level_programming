@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_dlistint -prints all the elements of doubly list
+ * print_dlistint - prints all the elements of doubly list
  * @h: const dlistint_t *
  * Return: size_t the number of element of a list
  */
