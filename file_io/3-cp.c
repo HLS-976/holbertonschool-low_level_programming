@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		error_exit("Error: Can't write to %s\n", argv[2], 99);
 	}
+
 	while (1)
 	{
 		rd = read(fd_from, buf, 1024);
@@ -45,14 +46,11 @@ int main(int argc, char *argv[])
 		if (rd == -1)
 			error_exit("Error: Can't read from file %s\n", argv[1], 98);
 
-		while (total_written < rd)
-		{
-			wr = write(fd_to, buf + total_written, rd - total_written);
-			if (wr == -1)
-				error_exit("Error: Can't write to %s\n", argv[2], 99);
-			total_written += wr;
-		}
+		wr = write(fd_to, buf, rd);
+		if (wr == -1 || wr != rd)
+			error_exit("Error: Can't write to %s\n", argv[2], 99);
 	}
+
 	if (close(fd_from) == -1)
 		error_exit("Error: Can't close fd %d\n", argv[1], 100);
 	if (close(fd_to) == -1)
