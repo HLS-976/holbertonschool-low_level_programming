@@ -1,5 +1,7 @@
-#include "main.h"
-
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * error_exit - Prints an error message and exits the program.
  * @msg: The error message to display.
@@ -13,15 +15,16 @@ void error_exit(const char *msg, const char *file, int code)
 }
 
 /**
- * main - copys the source file to the destiation file
+ * main - copys the source file at the destination finale
  * @argc: int
  * @argv: char *
- * Return: 0 on succed, error on failure
+ * Return: 0 on succend, or error on failure
  */
+
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
-	ssize_t rd, wr, total_written = 0;
+	ssize_t rd, wr;
 	char buf[1024];
 
 	if (argc != 3)
@@ -53,7 +56,9 @@ int main(int argc, char *argv[])
 
 	if (close(fd_from) == -1)
 		error_exit("Error: Can't close fd %d\n", argv[1], 100);
+
 	if (close(fd_to) == -1)
 		error_exit("Error: Can't close fd %d\n", argv[2], 100);
+
 	return (0);
 }
